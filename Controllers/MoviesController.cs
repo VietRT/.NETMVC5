@@ -10,14 +10,26 @@ namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext(); //disposable object
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
         // GET: Movies/Index
         public ActionResult Index()
         {
-            var movie = new List<Movie> 
-            { 
-                new Movie { Name = "Shriek!"},
-                new Movie { Name = "Wall-E"}
-            };
+            //var movie = new List<Movie> 
+            //{ 
+            //    new Movie { Name = "Shriek!"},
+            //    new Movie { Name = "Wall-E"}
+            //};
 
 
             var customers = new List<Customer>
@@ -28,7 +40,8 @@ namespace Vidly.Controllers
 
             var viewModel = new RandomMovieViewModel
             {
-                Movie = movie,
+                //Movie = movie,
+                Movie = _context.Movies.ToList(),
                 Customers = customers,
             };
 
@@ -45,6 +58,13 @@ namespace Vidly.Controllers
             //return HttpNotFound();
             //return new EmptyResult();
             //return RedirectToAction("Index", "Home", new {page=1, sortBy = "name"});
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+
+            return View(movie);
         }
 
         public ActionResult Random(int? pageIndex, string sortBy)
@@ -66,16 +86,6 @@ namespace Vidly.Controllers
         {
             return Content(year + "/" + month);
         }
-
-
-
-
-
-
-
-
-
-
 
 
     }

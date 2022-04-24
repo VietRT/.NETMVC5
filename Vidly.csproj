@@ -175,6 +175,26 @@
     <Compile Include="Migrations\202204130411191_PopulateMembershipTypes.designer.cs">
       <DependentUpon>202204130411191_PopulateMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204241923370_ApplyAnnotationToCustomerName.cs" />
+    <Compile Include="Migrations\202204241923370_ApplyAnnotationToCustomerName.designer.cs">
+      <DependentUpon>202204241923370_ApplyAnnotationToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204242049033_AddNameToMembershipTypesDB.cs" />
+    <Compile Include="Migrations\202204242049033_AddNameToMembershipTypesDB.designer.cs">
+      <DependentUpon>202204242049033_AddNameToMembershipTypesDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204242050312_UpdateMembershipTypesWithNames.cs" />
+    <Compile Include="Migrations\202204242050312_UpdateMembershipTypesWithNames.designer.cs">
+      <DependentUpon>202204242050312_UpdateMembershipTypesWithNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204242118221_UpdateCustomerDBWithBirthDate.cs" />
+    <Compile Include="Migrations\202204242118221_UpdateCustomerDBWithBirthDate.designer.cs">
+      <DependentUpon>202204242118221_UpdateCustomerDBWithBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204242207357_AddNewColumnsToMoviesDB.cs" />
+    <Compile Include="Migrations\202204242207357_AddNewColumnsToMoviesDB.designer.cs">
+      <DependentUpon>202204242207357_AddNewColumnsToMoviesDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -225,6 +245,8 @@
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +276,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204130411191_PopulateMembershipTypes.resx">
       <DependentUpon>202204130411191_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204241923370_ApplyAnnotationToCustomerName.resx">
+      <DependentUpon>202204241923370_ApplyAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204242049033_AddNameToMembershipTypesDB.resx">
+      <DependentUpon>202204242049033_AddNameToMembershipTypesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204242050312_UpdateMembershipTypesWithNames.resx">
+      <DependentUpon>202204242050312_UpdateMembershipTypesWithNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204242118221_UpdateCustomerDBWithBirthDate.resx">
+      <DependentUpon>202204242118221_UpdateCustomerDBWithBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204242207357_AddNewColumnsToMoviesDB.resx">
+      <DependentUpon>202204242207357_AddNewColumnsToMoviesDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

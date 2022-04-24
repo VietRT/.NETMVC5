@@ -17,13 +17,17 @@ else
     <table class="table table-bordered table-hover">
         <tr>
             <th>Customer</th>
+            <th>MembershipType</th>
+            <th>Discount Rate</th>
         </tr>
 
         @foreach (var customer in Model.Customers)
         {
-            <tr>
-                <td><a href="Customers/Details/@customer.Id">@customer.Name</a></td>
-            </tr>
+    <tr>
+        <td><a href="Customers/Details/@customer.Id">@customer.Name</a></td>
+        <td>@customer.MembershipType.Name</td>
+        <td>@customer.MembershipType.DiscountRate%</td>
+    </tr>
         }
 
     </table>

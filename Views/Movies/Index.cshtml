@@ -15,7 +15,7 @@
 <h2>Movies</h2>
 
 
-@if(Model.Movie.Count == 0)
+@*@if(Model.Movie.Count == 0)
 {
     <p>No movies left on the shelf</p>
 }
@@ -34,4 +34,20 @@ else
         }
 
     </table>
-}
+}*@
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Movies</th>
+        <th>Genre</th>
+    </tr>
+
+    @foreach (var movie in Model.Movie)
+    {
+<tr>
+    <td><a href="Movies/Details/@movie.Id">@movie.Name</a></td>
+    <td>@movie.Genre</td>
+</tr>
+    }
+
+</table>
