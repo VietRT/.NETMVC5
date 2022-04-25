@@ -1,5 +1,5 @@
 ﻿@using Vidly.ViewModels
-@model Vidly.ViewModels.RandomMovieViewModel
+@model Vidly.ViewModels.CustomersMovieViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -14,6 +14,9 @@
 
 <h2>Movies</h2>
 
+<a class = "btn btn-primary btn-lg" href="Movies/New">New Movie</a>
+
+<p> </p>
 
 @*@if(Model.Movie.Count == 0)
 {
@@ -46,7 +49,7 @@ else
     {
 <tr>
     <td><a href="Movies/Details/@movie.Id">@movie.Name</a></td>
-    <td>@movie.Genre</td>
+    <td>@movie.Genre.Name</td>
 </tr>
     }
 

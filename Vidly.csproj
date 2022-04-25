@@ -195,14 +195,41 @@
     <Compile Include="Migrations\202204242207357_AddNewColumnsToMoviesDB.designer.cs">
       <DependentUpon>202204242207357_AddNewColumnsToMoviesDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204250137173_CreateGenreDBAndUpdateRequiredFieldsInMoviesModel.cs" />
+    <Compile Include="Migrations\202204250137173_CreateGenreDBAndUpdateRequiredFieldsInMoviesModel.designer.cs">
+      <DependentUpon>202204250137173_CreateGenreDBAndUpdateRequiredFieldsInMoviesModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204250138521_PopulateGenresTable.cs" />
+    <Compile Include="Migrations\202204250138521_PopulateGenresTable.designer.cs">
+      <DependentUpon>202204250138521_PopulateGenresTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204250153042_AddingGenreIdAsForeignKeyForMoviesDB.cs" />
+    <Compile Include="Migrations\202204250153042_AddingGenreIdAsForeignKeyForMoviesDB.designer.cs">
+      <DependentUpon>202204250153042_AddingGenreIdAsForeignKeyForMoviesDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204250159281_RemovingGenreInMoviesDBToAddGenreIdForeignKey.cs" />
+    <Compile Include="Migrations\202204250159281_RemovingGenreInMoviesDBToAddGenreIdForeignKey.Designer.cs">
+      <DependentUpon>202204250159281_RemovingGenreInMoviesDBToAddGenreIdForeignKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204250307011_AddStringLengthToNamePropertyInMoviesDB.cs" />
+    <Compile Include="Migrations\202204250307011_AddStringLengthToNamePropertyInMoviesDB.designer.cs">
+      <DependentUpon>202204250307011_AddStringLengthToNamePropertyInMoviesDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.cs" />
+    <Compile Include="Migrations\202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.Designer.cs">
+      <DependentUpon>202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Movie.cs" />
-    <Compile Include="ViewModel\RandomMovieViewModel.cs" />
+    <Compile Include="ViewModel\MoviesFormViewModel.cs" />
+    <Compile Include="ViewModel\CustomersMovieViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\CustomerFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-cosmo.css" />
@@ -247,6 +274,8 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\NewMovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -291,6 +320,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204242207357_AddNewColumnsToMoviesDB.resx">
       <DependentUpon>202204242207357_AddNewColumnsToMoviesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250137173_CreateGenreDBAndUpdateRequiredFieldsInMoviesModel.resx">
+      <DependentUpon>202204250137173_CreateGenreDBAndUpdateRequiredFieldsInMoviesModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250138521_PopulateGenresTable.resx">
+      <DependentUpon>202204250138521_PopulateGenresTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250153042_AddingGenreIdAsForeignKeyForMoviesDB.resx">
+      <DependentUpon>202204250153042_AddingGenreIdAsForeignKeyForMoviesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250159281_RemovingGenreInMoviesDBToAddGenreIdForeignKey.resx">
+      <DependentUpon>202204250159281_RemovingGenreInMoviesDBToAddGenreIdForeignKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250307011_AddStringLengthToNamePropertyInMoviesDB.resx">
+      <DependentUpon>202204250307011_AddStringLengthToNamePropertyInMoviesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.resx">
+      <DependentUpon>202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

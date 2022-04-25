@@ -1,5 +1,5 @@
 ﻿@using Vidly.ViewModels
-@model Vidly.ViewModels.RandomMovieViewModel
+@model Vidly.ViewModels.CustomersMovieViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -24,7 +24,7 @@ else
         @foreach (var customer in Model.Customers)
         {
     <tr>
-        <td><a href="Customers/Details/@customer.Id">@customer.Name</a></td>
+        <td><a href="Customers/Edit/@customer.Id">@customer.Name</a></td>
         <td>@customer.MembershipType.Name</td>
         <td>@customer.MembershipType.DiscountRate%</td>
     </tr>
