@@ -16,11 +16,14 @@ namespace Vidly.Models
 
         public Genre Genre { get; set; }
 
+        [Required]
         [Display(Name = "Release Date")]
         public DateTime? ReleaseDate { get; set; }
 
         public DateTime? DateAdded   { get; set; }
 
+        [Required]
+        [Range(1,20, ErrorMessage = "The field Number In Stock must be between 1 and 20")]
         [Display(Name = "Number In Stock")]
         public int NumberInStock { get; set; }
 

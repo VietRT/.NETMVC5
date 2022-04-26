@@ -11,12 +11,6 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        //var
-        //List<Customer> customer = new List<Customer>
-        //    {
-        //        new Customer { Id = 1,Name = "John Smith"},
-        //        new Customer { Id = 2, Name = "Mary Williams"}
-        //    };
 
         private ApplicationDbContext _context;
 
@@ -35,14 +29,27 @@ namespace Vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(), //this takes the error away saying Id is required since now it will initialize customer's Id to 0 by default
                 MembershipTypes = membershipTypes
             };
             return View("CustomerForm",viewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer) /*automatically binds request data to this argument, customer*/
         {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return View("CustomerForm", viewModel);
+            }
+
             if(customer.Id == 0)
             {
                 _context.Customers.Add(customer);
@@ -70,7 +77,7 @@ namespace Vidly.Controllers
         [Route("Customers")]
         public ActionResult Index()
         {
-            var viewModel = new CustomersMovieViewModel
+            var viewModel = new MoviesViewModel
             {
                 //Customers = customer
                 Customers = _context.Customers.Include(x => x.MembershipType).ToList() //the include method will tell entity to load the data for
@@ -113,24 +120,6 @@ namespace Vidly.Controllers
             return View("CustomerForm", viewModel); /*without passing "New", which is the View in Views/Customers/New.cshtml, this will look for the view called Edit instead*/
                    
         }
-
-    //    [HttpGet]
-    //    [Route("Customers/Details/1")]
-    //    public ActionResult JohnsDetails()
-    //    {
-    //        var customer = new Customer() { Name = "John Smith" };
-
-    //        return View(customer); //currently this works for any id
-    //    }
-
-    //    [HttpGet]
-    //    [Route("Customers/Details/2")]
-    //    public ActionResult MarysDetails()
-    //    {
-    //        var customer = new Customer() { Name = "Mary Williams" };
-
-    //        return View(customer); //currently this works for any id
-    //    }
 
     }
 }

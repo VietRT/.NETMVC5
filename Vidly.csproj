@@ -219,15 +219,20 @@
     <Compile Include="Migrations\202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.Designer.cs">
       <DependentUpon>202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204260354596_AddingRequiredFieldsToMoviesModel.cs" />
+    <Compile Include="Migrations\202204260354596_AddingRequiredFieldsToMoviesModel.Designer.cs">
+      <DependentUpon>202204260354596_AddingRequiredFieldsToMoviesModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="ViewModel\MoviesFormViewModel.cs" />
-    <Compile Include="ViewModel\CustomersMovieViewModel.cs" />
+    <Compile Include="ViewModel\MoviesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CustomerFormViewModel.cs" />
   </ItemGroup>
@@ -338,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.resx">
       <DependentUpon>202204250309470_MakingReleaseDateAndDateAddedNullableInMoviesDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204260354596_AddingRequiredFieldsToMoviesModel.resx">
+      <DependentUpon>202204260354596_AddingRequiredFieldsToMoviesModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -10,23 +10,13 @@
 @*Create is an action*@
 @using (@Html.BeginForm("Save", "Customers"))
 {
+    @Html.ValidationSummary(true, "Please fix the following errors.")
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.Name) @*using the @Html.LabelFor() method gives the properties of the model class to the given element,
             such as the form validations attached to the class property*@
         @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control" }) @*anonymous object new {}*@
+        @Html.ValidationMessageFor(c => c.Customer.Name)
     </div>
-
-    <div class="form-group">
-        @*<label for="birthdate">Date of Birth</label>*@ @*this method does not give focus to the textbox*@
-        @Html.LabelFor(c => c.Customer.BirthDate)
-        @*this formats the placeholder text*@
-        @Html.TextBoxFor(c => c.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
-    </div>
-
-    @*<div class="form-group">
-            @Html.LabelFor(c => c.IsSubstribedToNewsLetter)
-            @Html.CheckBoxFor(c => c.IsSubstribedToNewsLetter, new { @class = "form-control" })
-        </div>*@
 
     <div class="form-group">
         @Html.LabelFor(c => c.Customer.MembershipTypeId)
@@ -35,7 +25,22 @@
                                 property in membershiptype class that holds the text for each item (Name)
                                                     "Select Membership Type" adds blank item on top of dropdown list*@
         @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Customer.MembershipTypeId)
     </div>
+
+    <div class="form-group">
+        @*<label for="birthdate">Date of Birth</label>*@ @*this method does not give focus to the textbox*@
+        @Html.LabelFor(c => c.Customer.BirthDate)
+        @*this formats the placeholder text*@
+        @Html.TextBoxFor(c => c.Customer.BirthDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(c => c.Customer.BirthDate)
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(c => c.IsSubstribedToNewsLetter)
+            @Html.CheckBoxFor(c => c.IsSubstribedToNewsLetter, new { @class = "form-control" })
+        </div>*@
+
 
     <div class="checkbox">
         <label>
@@ -43,8 +48,14 @@
         </label>
     </div>
 
-    @Html.HiddenFor(c => c.Customer.Id) @*this hiddenfield is needed since our Save action in CustomerControllre is relying on 
-                                            the Id to decide whether to create or update a customer*@
+    @Html.HiddenFor(c => c.Customer.Id) @*this hiddenfield is needed since our Save action in CustomerControllre is relying on
+        the Id to decide whether to create or update a customer*@
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary btn-sm">Save</button>
 
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval") 
 }
