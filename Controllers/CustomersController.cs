@@ -77,18 +77,19 @@ namespace Vidly.Controllers
         [Route("Customers")]
         public ActionResult Index()
         {
+            //we do not need this list of customers since we are rendering the table via using an ajax calling to our web api to get the list of customers
             var viewModel = new MoviesViewModel
             {
                 //Customers = customer
                 Customers = _context.Customers.Include(x => x.MembershipType).ToList() //the include method will tell entity to load the data for
-                                                                                        //Customer from the db and MembershipType along with it (called eager loading)
+                                                                                       //Customer from the db and MembershipType along with it (called eager loading)
 
-        };
+            };
 
             //var customer = _context.Customers.ToList(); //executes query immediately by using ToList() method
 
             //return View(viewModel); //View will assign to ViewData.Models on its own
-            return View(viewModel);
+            return View();
         }
 
         public ActionResult Details(int id)
