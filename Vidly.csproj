@@ -272,22 +272,29 @@
     <Compile Include="Migrations\202205090416359_AddDrivingLicenseToApplicationUser.designer.cs">
       <DependentUpon>202205090416359_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205092233092_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202205092233092_AddPhoneToApplicationUser.designer.cs">
+      <DependentUpon>202205092233092_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModel\MoviesFormViewModel.cs" />
     <Compile Include="ViewModel\MoviesViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-cosmo.css" />
@@ -610,6 +617,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205090416359_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>202205090416359_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205092233092_AddPhoneToApplicationUser.resx">
+      <DependentUpon>202205092233092_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
