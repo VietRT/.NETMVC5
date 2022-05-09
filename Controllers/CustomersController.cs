@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Runtime.Caching;
 
 namespace Vidly.Controllers
 {
@@ -89,6 +90,15 @@ namespace Vidly.Controllers
             //var customer = _context.Customers.ToList(); //executes query immediately by using ToList() method
 
             //return View(viewModel); //View will assign to ViewData.Models on its own
+
+            if(MemoryCache.Default["Genres"] == null)
+            {
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
+
+
             return View();
         }
 
