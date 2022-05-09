@@ -6,12 +6,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{ 
-    var className = Model.Movie.Count > 5 ? "popular" : null;
-}
-
-<h2 class="@className"></h2>
-
 <h2>Movies</h2>
 
 <a class = "btn btn-primary btn-lg" href="Movies/New">New Movie</a>
