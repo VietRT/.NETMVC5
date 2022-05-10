@@ -9,6 +9,8 @@ namespace Vidly.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Rental> Rental { get; set; }
+
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Movie> Movies { get; set; }
 
